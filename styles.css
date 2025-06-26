@@ -1,0 +1,101 @@
+/* SampleFocus Downloader Extension Styles */
+
+.sf-downloader-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 12px 20px !important;
+  margin-left: 12px !important;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 14px 0 rgba(102, 126, 234, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  user-select: none !important;
+}
+
+.sf-downloader-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px 0 rgba(102, 126, 234, 0.6) !important;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+.sf-downloader-btn:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 4px 14px 0 rgba(102, 126, 234, 0.4) !important;
+}
+
+.sf-downloader-btn svg {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+.sf-downloader-btn span {
+  font-weight: 600 !important;
+  letter-spacing: 0.025em !important;
+}
+
+/* Loading spinner animation */
+.sf-spinner {
+  animation: sf-spin 1s linear infinite !important;
+}
+
+@keyframes sf-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hover effect with ripple */
+.sf-downloader-btn::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent) !important;
+  transition: left 0.5s !important;
+}
+
+.sf-downloader-btn:hover::before {
+  left: 100% !important;
+}
+
+/* Success state (optional for future use) */
+.sf-downloader-btn.success {
+  background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%) !important;
+  box-shadow: 0 4px 14px 0 rgba(86, 171, 47, 0.4) !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .sf-downloader-btn {
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+    margin-left: 8px !important;
+  }
+  
+  .sf-downloader-btn span {
+    display: none !important;
+  }
+  
+  .sf-downloader-btn::after {
+    content: 'Download' !important;
+    font-size: 12px !important;
+  }
+}
